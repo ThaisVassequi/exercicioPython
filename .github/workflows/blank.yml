@@ -36,7 +36,7 @@ jobs:
       # Run python script with environment variables
       - name: Run python script
         env:
-          DB: ${{ env.DB }}
+          DB: ${{ vars.DB }}
           USER_PG: ${{ secrets.USER_PG }}
           PGPASSWORD: ${{ secrets.PGPASSWORD }}
         run: |
