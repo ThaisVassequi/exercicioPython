@@ -1,6 +1,12 @@
-import os
 import psycopg2
+import os
 from psycopg2 import OperationalError
+import sys
+#print(os.environ)
+#print(sys.argv[0])
+#print(sys.argv[1])
+#print(sys.argv[2])
+
 
 # Recuperar variáveis de ambiente
 host = '3.121.182.90'

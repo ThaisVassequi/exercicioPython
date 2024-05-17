@@ -4,8 +4,6 @@ name: Exercicio de python
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -23,10 +21,24 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # Runs a set of commands using the runners shell
-      - name: Run python script
+      # Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      # Install dependencies
+      - name: Install dependencies
         run: |
-         sudo apt-get -y install python3
-         sudo pip install psycopg2-binary
-         
-         python exercicio.py
+          python -m pip install --upgrade pip
+          pip install psycopg2-binary
+
+      # Run python script with environment variables
+      - name: Run python script
+        env:
+          DB: ${{ env.DB }}
+          USER_PG: ${{ secrets.USER_PG }}
+          PGPASSWORD: ${{ secrets.PGPASSWORD }}
+        run: |
+          python exercicio.py
+
