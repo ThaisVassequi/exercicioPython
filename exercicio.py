@@ -9,6 +9,15 @@ port = os.getenv("PORT")
 database = os.getenv("DATABASE_DB")
 user = os.getenv("USER_DB")
 password = os.getenv("PASSWORD_DB")
+'''
+
+# Recuperar variáveis de ambiente
+host = "${{ secrets.HOST_NAME }}"
+port = 5432
+database = "${{ secrets.DATABASE_DB }}"
+user = "${{ secrets.USER_DB }}"
+password = "${{ secrets.PASSWORD_DB }}"
+'''
 
 # Imprimir os valores das variáveis de ambiente para depuração (exceto a senha por segurança)
 print(f"Conectando ao banco de dados com os seguintes detalhes:")
