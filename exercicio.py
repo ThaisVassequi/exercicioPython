@@ -5,7 +5,7 @@ import sys
 
 # Recuperar variáveis de ambiente
 host = sys.argv[0]
-port = sys.argv[1]
+port = int(sys.argv[1])
 database = sys.argv[2]
 user = sys.argv[3]
 password = sys.argv[4]
