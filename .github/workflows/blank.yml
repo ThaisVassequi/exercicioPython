@@ -29,8 +29,6 @@ jobs:
          sudo apt-get -y install python3
          sudo pip install psycopg2-binary
          
-         python exercicio.py
-
         # Run python script with environment variables
       - name: Run python script
         env:
