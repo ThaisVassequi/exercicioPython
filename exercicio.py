@@ -1,14 +1,14 @@
 import os
 import psycopg2
 from psycopg2 import OperationalError
-import sys
+
 
 # Recuperar variáveis de ambiente
-host = sys.argv[1]
-port = int(sys.argv[2])
-database = sys.argv[3]
-user = sys.argv[4]
-password = sys.argv[5]
+host = os.getenv("HOST_NAME")
+port = os.getenv("PORT")
+database = os.getenv("DATABASE_DB")
+user = os.getenv("USER_DB")
+password = os.getenv("PASSWORD_DB")
 
 # Imprimir os valores das variáveis de ambiente para depuração (exceto a senha por segurança)
 print(f"Conectando ao banco de dados com os seguintes detalhes:")

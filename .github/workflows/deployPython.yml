@@ -36,5 +36,5 @@ jobs:
       # Run python script with environment variables
       - name: Run python script
         run: |
-          python exercicio.py ${{ secrets.HOST_NAME }} ${{ secrets.PORT }} ${{ secrets.DATABASE_DB }} ${{ secrets.USER_DB }} ${{ secrets.PASSWORD_DB }}
+          python exercicio.py 
 
