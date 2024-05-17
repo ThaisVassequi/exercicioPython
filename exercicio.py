@@ -14,7 +14,7 @@ try:
     conn = psycopg2.connect(
         host='3.121.182.90',
         port=5432,
-        database='db_ta',
+        database='db_rs',
         user='postgres',
         password='Abcd1234!'
     )
